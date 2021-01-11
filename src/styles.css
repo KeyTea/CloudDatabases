@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+nav {
+  text-transform: uppercase;
+}
+
+mat-divider {
+  border-color: #888888;
+}
+
+table {
+  border-color: red;
+}
+
+.mat-elevation-z8 {
+  border-color: green;
+}
+
+mat-table {
+  border-color: red;
+}

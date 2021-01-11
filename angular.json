@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "CostOfOwnership"
+  "defaultProject": "CostOfOwnership",
+  "cli": {
+    "analytics": false
+  }
 }
