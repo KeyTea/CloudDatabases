@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { TopComponent } from './top/top.component';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -22,6 +21,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import { ManagementComponent } from './management/management.component';
+import {MainModule} from './main/main.module';
+import {MainComponent} from './main/main.component';
 export const firebaseConfig = environment.firebase;
 // import { AngularFireModule } from 'angularfire2';
 // import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -29,9 +30,9 @@ export const firebaseConfig = environment.firebase;
 @NgModule({
   declarations: [
     AppComponent,
-    TopComponent,
-    TabsComponent,
-    // ManagementComponent,
+    MainComponent,
+    // TopComponent,
+    // TabsComponent,
     // PortfolioComponent,
     // InventoryComponent
   ],
@@ -50,9 +51,17 @@ export const firebaseConfig = environment.firebase;
     AngularFirestoreModule,
     MatDividerModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MainModule,
+    // MainModule
   ],
   providers: [],
+  exports: [
+    MainComponent,
+    // TopComponent,
+    // TabsComponent
+    // MainComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

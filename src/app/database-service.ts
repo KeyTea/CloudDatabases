@@ -28,6 +28,6 @@ export class Database2 {
 export abstract class DatabaseService {
   abstract getDatabases(): Observable<Database[]>;
   abstract getDatabase(database: string): Observable<Database>;
-  // abstract addBook(database: Database): Observable<boolean>;
-  // abstract removeBook(id: number): Observable<boolean>;
+  // abstract addDatabase(database: Database): Observable<boolean>;
+  // abstract removeDatabase(id: number): Observable<boolean>;
 }

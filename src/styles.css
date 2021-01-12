@@ -24,3 +24,10 @@ mat-card-content {
   margin-right: 5vw;
 }
 
+.mat-tab-link{
+  color: #444444;
+}
+.mat-tab-link.mat-tab-label-active{
+  color: navy;
+}
+
