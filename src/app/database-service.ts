@@ -17,7 +17,6 @@ export class Database {
 }
 
 export class Database2 {
-  // cost: number;
   cpu: number;
   database: string;
   group: number;

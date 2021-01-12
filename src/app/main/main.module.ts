@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MainComponent} from './main.component';
 import {MainRoutingModule} from './main-routing.module';
 import {MatTableFilterModule} from 'mat-table-filter';
 import {MatTableModule} from '@angular/material/table';
@@ -19,7 +18,6 @@ import {TabsComponent} from '../tabs/tabs.component';
 
 @NgModule({
   declarations: [
-    // MainComponent,
     TopComponent,
     TabsComponent
   ],
@@ -27,7 +25,6 @@ import {TabsComponent} from '../tabs/tabs.component';
     TopComponent,
     TabsComponent
   ],
-  // exports: [MainComponent],
   imports: [
     CommonModule,
     MainRoutingModule,
