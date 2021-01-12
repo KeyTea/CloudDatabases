@@ -1,21 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
 nav {
   text-transform: uppercase;
 }
 
-mat-divider {
-  border-color: #888888;
+mat-card-content {
+  display: flex;
 }
 
-table {
-  border-color: red;
+.sumCard {
+  float: left;
+  width: 50%;
+  alignment: top;
+  vertical-align: top;
 }
 
-.mat-elevation-z8 {
-  border-color: green;
+.header {
+  text-transform: capitalize;
+  pointer-events: none;
+  margin-right: 5vw;
 }
 
-mat-table {
-  border-color: red;
-}

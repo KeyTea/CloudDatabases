@@ -21,6 +21,7 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
+import { ManagementComponent } from './management/management.component';
 export const firebaseConfig = environment.firebase;
 // import { AngularFireModule } from 'angularfire2';
 // import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -30,6 +31,7 @@ export const firebaseConfig = environment.firebase;
     AppComponent,
     TopComponent,
     TabsComponent,
+    // ManagementComponent,
     // PortfolioComponent,
     // InventoryComponent
   ],
