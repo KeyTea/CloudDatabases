@@ -1,0 +1,15 @@
+mat-card {
+  margin: 2vw;
+  color: grey;
+  display: inline-flex;
+}
+
+mat-icon {
+  vertical-align: middle;
+}
+
+.nav {
+  font-size: large;
+}
+
+

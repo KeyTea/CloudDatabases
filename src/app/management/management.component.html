@@ -1,0 +1,40 @@
+<nav mat-tab-nav-bar>
+  <a mat-tab-link [routerLink]="back.path"><mat-icon>{{title.icon}}</mat-icon></a>
+  <a mat-tab-link class="header">{{title.label}}</a>
+  <a mat-tab-link
+     *ngFor="let link of links"
+     (click)="aLink = link"
+     [active]="aLink == link">
+    <mat-icon>{{link.icon}}</mat-icon>
+    {{link.label}}
+  </a>
+</nav>
+<mat-card class="mat-elevation-z0">
+  <mat-card-content>
+    <div class="nav">
+      {{back.label}}
+      <mat-icon>{{back.icon}}</mat-icon>
+      {{aLink.title}}
+    </div>
+  </mat-card-content>
+</mat-card>
+<nav mat-tab-nav-bar>
+<a mat-tab-link
+   *ngFor="let tab of tabs"
+   (click)="aTab = tab"
+   [active]="aTab == tab">
+  <mat-icon>{{tab.icon}}</mat-icon>
+  {{tab.label}}
+</a>
+</nav>
+<mat-card class="mat-elevation-z0">
+  <mat-card-content>
+    <div class="nav">
+      {{back.label}}
+      <mat-icon>{{back.icon}}</mat-icon>
+      {{aLink.title}}
+      <mat-icon>{{back.icon}}</mat-icon>
+      {{aTab.title}}
+    </div>
+  </mat-card-content>
+</mat-card>

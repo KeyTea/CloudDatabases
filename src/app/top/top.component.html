@@ -1,0 +1,21 @@
+<nav mat-tab-nav-bar>
+  <a mat-tab-link class="header">{{title}}</a>
+  <a mat-tab-link class="manage"
+     [routerLink]="manage.path"
+     routerLinkActive #rla="routerLinkActive"
+     [active]="rla.isActive">
+    <mat-icon>{{manage.icon}}</mat-icon>
+    {{manage.label}}
+  </a>
+  <a mat-tab-link
+     *ngFor="let link of links"
+     (click)="aLink = link"
+     [active]="aLink == link"
+    [disabled]="link.status"
+    >
+    <mat-icon>{{link.icon}}</mat-icon>
+    {{link.label}}
+  </a>
+</nav>
+
+

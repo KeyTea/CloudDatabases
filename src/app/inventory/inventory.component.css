@@ -1,0 +1,38 @@
+table{
+  width: 90%;
+  border-style: none;
+}
+
+th {
+  background-color: darkblue;
+  color: white;
+  text-transform: capitalize;
+  font-style: normal;
+}
+
+tr {
+  border-style: none;
+  border-color: grey;
+}
+tr:nth-child(even) {
+  background: #c8d9f6
+}
+tr:nth-child(odd) {
+}
+
+mat-card {
+  display: block;
+  width: 80%;
+  margin: 10px;
+}
+
+mat-label {
+  display: inline-block;
+}
+
+input {
+  border-radius: 5px;
+  border-style: none;
+  margin: 5px;
+}
+

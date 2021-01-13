@@ -1,0 +1,20 @@
+.header {
+  text-transform: capitalize;
+  margin-right: 10vw;
+  margin-left: 2vw;
+  font-size: large;
+  font-weight: normal;
+  color: black;
+}
+
+.mat-tab-link.mat-tab-label{
+  color: navy;
+}
+
+.manage {
+  color: navy;
+}
+
+mat-icon {
+  color: #444444;
+}
