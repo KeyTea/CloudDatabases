@@ -8,9 +8,9 @@ import {MatDialog} from '@angular/material/dialog';
 import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
 
 const DATABASES: Database[] = [
-  {name: 'Database A', cpu: 4, ram: 4, group: 1, server: 'server A'},
-  {name: 'Database B', cpu: 8, ram: 8, group: 1, server: 'server B'},
-  {name: 'Database C', cpu: 12, ram: 12, group: 2, server: 'server C'}
+  {database: 'Database A', cpu: 4, ram: 4, group: 1, server: 'server A'},
+  {database: 'Database B', cpu: 8, ram: 8, group: 1, server: 'server B'},
+  {database: 'Database C', cpu: 12, ram: 12, group: 2, server: 'server C'}
 ];
 
 @Component({
