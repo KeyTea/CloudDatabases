@@ -1,0 +1,15 @@
+<selection>
+<mat-checkbox class="select-all"
+              [checked]="allTrue"
+              [indeterminate]="selectSome()"
+              (change)="selectAllOrNone($event.checked)">
+  <h4>Select All</h4>
+</mat-checkbox>
+<div class="scroll" id="scroll">
+  <ul *ngFor="let db of visible" class="scrolling-list">
+  <li style="list-style: none" class="scrolling-item">
+    <mat-checkbox (change)="updateAllChosen()" [(ngModel)]="db.checkbox">{{db.database}}</mat-checkbox>
+  </li>
+</ul>
+</div>
+</selection>
