@@ -11,24 +11,31 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDividerModule} from '@angular/material/divider';
 import {MainModule} from '../main/main.module';
+import {DatabaseService} from '../database-service';
+import {DatabaseArrayService} from '../database-array.service';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [PortfolioComponent],
   exports: [
     PortfolioComponent
   ],
-  imports: [
-    CommonModule,
-    PortfolioRoutingModule,
-    MatTableFilterModule,
-    MatTableModule,
-    FormsModule,
-    MatPaginatorModule,
-    MatTabsModule,
-    MatSortModule,
-    MatFormFieldModule,
-    MatDividerModule,
-    MainModule,
-  ]
-})
+    imports: [
+        CommonModule,
+        PortfolioRoutingModule,
+        MatTableFilterModule,
+        MatTableModule,
+        FormsModule,
+        MatPaginatorModule,
+        MatTabsModule,
+        MatSortModule,
+        MatFormFieldModule,
+        MatDividerModule,
+        MainModule,
+        ScrollingModule,
+    ],
+  providers: [
+    {provide: DatabaseService, useClass: DatabaseArrayService}
+    ]
+    })
 export class PortfolioModule { }

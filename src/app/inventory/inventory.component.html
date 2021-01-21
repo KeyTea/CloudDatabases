@@ -8,12 +8,12 @@
     <h3>Summary</h3>
     <div class="sumCard">
       <h4>Total databases</h4>
-      <h5>{{totalDB() | number }}</h5>
+      <h5>{{totalDb | number }}</h5>
     </div>
   <mat-divider [vertical]="true"></mat-divider>
   <div>
     <h4>Total cost</h4>
-    <h5>{{totalCost() | currency : 'USD' : 'symbol' : '1.0-0' }} </h5>
+    <h5>{{totalCost | currency : 'USD' : 'symbol' : '1.0-0' }} </h5>
   </div>
   </mat-card-content>
 </mat-card>

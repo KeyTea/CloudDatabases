@@ -24,4 +24,27 @@ export class DatabaseFirebaseService implements DatabaseService {
     return this.firestore.collection<Database>(COLLECTION).doc('' + db).get().pipe(map(d =>
       d.data() as Database));
   }
+
+  addDatabase(database: Database): Observable<boolean> {
+    return this.getDatabase(database.database)
+      .pipe(mergeMap(db => {
+        if (db) {
+          return of(false);
+        }
+        this.firestore.collection(COLLECTION)
+          .doc('' + database.database).set(database);
+        return of(true);
+      }));
+  }
+
+  removeDatabase(name: string): Observable<boolean> {
+    return this.getDatabase(name).pipe(mergeMap(b => {
+      if (!b) {
+        return of(false);
+      }
+      this.firestore.collection(COLLECTION).doc('' + name)
+        .delete();
+      return of(true);
+    }));
+  }
 }

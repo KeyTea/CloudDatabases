@@ -1,8 +1,53 @@
 table{
   width: 90%;
+
 }
 
 mat-label {
   display: inline-block;
 }
 
+.list-container {
+  height: 800px;
+  /*width: 500px;*/
+  border: 1px solid black;
+}
+
+.cdk-virtual-scroll-content-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.database-item {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.database {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.cpu {
+  font-size: 14px;
+}
+
+.list-group-item {
+  margin: 0 !important;
+  padding: 0 10px !important;
+}
+
+.lg {
+  /*height: 262.5px;*/
+  height: 75vh;
+}
+
+button {
+  margin: 0 15px !important;
+}
+
+body {
+  padding: 3em;
+}

@@ -14,7 +14,28 @@
     <div class="nav">
       {{back.label}}
       <mat-icon>{{back.icon}}</mat-icon>
-      {{aLink.title}}
+     {{aLink.title}}
+      <div *ngIf="aLink.label == 'Create'; else remove">
+    <h3>Add Database</h3>
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+         <input class="field" matInput *ngFor="let field of databaseFields" [placeholder]="field.name" [name]=field.name ngModel>
+        <button>Submit</button>
+      </form>
+      </div>
+      <ng-template #remove><h3>Remove Database</h3>
+        <mat-form-field>
+          <mat-select placeholder="Databases" [formControl]="databases" multiple>
+<!--            <mat-select-filter-->
+<!--              [array]="databases"-->
+<!--              [displayMember]="'database'"-->
+<!--              (filteredReturn)="filteredDatabases = $event"></mat-select-filter>-->
+            <mat-option
+              *ngFor="let db of databases"
+              [value]="databases"
+            >{{db.database}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </ng-template>
     </div>
   </mat-card-content>
 </mat-card>
@@ -27,6 +48,7 @@
   {{tab.label}}
 </a>
 </nav>
+
 <mat-card class="mat-elevation-z0">
   <mat-card-content>
     <div class="nav">

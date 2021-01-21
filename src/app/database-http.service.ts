@@ -21,4 +21,12 @@ export class DatabaseHttpService implements DatabaseService {
   getDatabase(database: string): Observable<Database> {
     return this.httpClient.get<Database>(`${this.url}/${database}`);
   }
+
+  addDatabase(database: Database): Observable<boolean> {
+    return this.httpClient.post<Database>(this.url, database).pipe(map(db => db ? true : false));
+  }
+
+  removeDatabase(name: string): Observable<boolean> {
+    return this.httpClient.delete(`${this.url}/${name}`).pipe(map(() => true ));
+  }
 }

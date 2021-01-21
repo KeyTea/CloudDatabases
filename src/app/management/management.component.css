@@ -12,4 +12,9 @@ mat-icon {
   font-size: large;
 }
 
+.field {
+  margin: 2vw 0vw;
+  display: block;
+}
+
 

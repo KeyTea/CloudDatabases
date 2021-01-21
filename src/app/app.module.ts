@@ -20,12 +20,15 @@ import {MainModule} from './main/main.module';
 import {MainComponent} from './main/main.component';
 import {AngularFireAnalyticsModule} from '@angular/fire/analytics';
 import {FirebaseAppConfig} from '@angular/fire/firebase.app.module';
+import { ScrollComponent } from './scroll/scroll.component';
+import {MatCheckbox, MatCheckboxModule} from '@angular/material/checkbox';
 // export const firebaseConfig = environment.firebase;
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
+    ScrollComponent,
     // AngularFireModule.initializeApp(environment.firebase),
     // AngularFireAnalyticsModule,
     // AngularFirestoreModule
@@ -47,6 +50,7 @@ import {FirebaseAppConfig} from '@angular/fire/firebase.app.module';
     MatDividerModule,
     MatIconModule,
     MatCardModule,
+    MatCheckboxModule,
     MainModule
   ],
   providers: [],

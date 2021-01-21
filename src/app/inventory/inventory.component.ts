@@ -5,6 +5,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableFilter} from 'mat-table-filter';
 import {MatSort} from '@angular/material/sort';
 import {AngularFirestore} from '@angular/fire/firestore';
+import {Observable, of} from 'rxjs';
 
 const DATABASES: Database[] = [
   {database: 'Database A', instance: 'instance A', server: 'server A', cpu: 4, ram: 4, group: 1, target: Target.POST12, cost: 1450},
@@ -23,23 +24,27 @@ export class InventoryComponent implements OnInit {
   dataSource: MatTableDataSource<Database>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  displayedColumns = Object.keys(DATABASES[0]).toString().split(',');
+  displayedColumns: string[];
+  // displayedColumns = Object.keys(DATABASES[0]).toString().split(',');
   // dataSource = new MatTableDataSource(DATABASES);
   pageSizes = [5, 10, 20, 50, 100];
   filterEntity: Database;
   filterType: MatTableFilter;
   regex = '^[0-9]';
+  totalDb: number;
+  totalCost = 0;
+  costs: Database[];
+  db: Database = new Database();
   constructor(private databaseService: DatabaseService) {
   }
-
   ngOnInit(): void {
     this.filterEntity = new Database();
     this.filterType = MatTableFilter.ANYWHERE;
-    this.databaseService.getDatabases().subscribe(db => {
-
-    });
+    this.displayedColumns = Object.keys(DATABASES[0]).toString().split(',');
     this.databaseService.getDatabases().subscribe(db => {
         this.dataSource = new MatTableDataSource<Database>(db);
+        this.totalDb = db.length;
+        this.costs = db as Database[];
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
       }
@@ -47,25 +52,29 @@ export class InventoryComponent implements OnInit {
   }
   applyFilter(filterValue: string): void {
     this.dataSource.filter = filterValue.trim().toLowerCase();
-
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
   }
+  // sumCost(): number {
+  //   let totalCost = 0;
+  //   this.databaseService.getDatabases().subscribe(db => {
+  //     db.forEach(d => {
+  //       totalCost += d.cost;
+  //     });
+  //   });
+  //   return totalCost;
+  // }
 
-  totalDB(): number {
-    return DATABASES.length;
-  }
-  totalCost(): number {
-    let totalCost = 0;
-    DATABASES.forEach(db => {
-      totalCost += db.cost;
-    });
-    return totalCost;
-}
-
+//   totalCost(): number {
+//     let totalCost = 0;
+//     DATABASES.forEach(db => {
+//       totalCost += db.cost;
+//     });
+//     return totalCost;
+// }
   ifNumber(cellElement: any): boolean {
-    return Number(cellElement).valueOf() > 0 ? true : false;
+    return Number(cellElement).valueOf() > 0;
   }
 }
 

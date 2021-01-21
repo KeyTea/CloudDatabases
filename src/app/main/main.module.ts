@@ -15,6 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {AppModule} from '../app.module';
 import {TopComponent} from '../top/top.component';
 import {TabsComponent} from '../tabs/tabs.component';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -25,21 +26,22 @@ import {TabsComponent} from '../tabs/tabs.component';
     TopComponent,
     TabsComponent
   ],
-  imports: [
-    CommonModule,
-    MainRoutingModule,
-    MatTableFilterModule,
-    MatTableModule,
-    FormsModule,
-    MatPaginatorModule,
-    MatFormFieldModule,
-    MatCardModule,
-    MatSortModule,
-    MatTabsModule,
-    MatDividerModule,
-    MatGridListModule,
-    MatIconModule,
-    // AppModule
-  ]
+    imports: [
+        CommonModule,
+        MainRoutingModule,
+        MatTableFilterModule,
+        MatTableModule,
+        FormsModule,
+        MatPaginatorModule,
+        MatFormFieldModule,
+        MatCardModule,
+        MatSortModule,
+        MatTabsModule,
+        MatDividerModule,
+        MatGridListModule,
+        MatIconModule,
+        ScrollingModule,
+        // AppModule
+    ]
 })
 export class MainModule { }
